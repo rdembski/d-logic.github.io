@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot D-LOGIC</title>
-    <!-- Dołączamy skrypt Gradio -->
-    <script src="https://unpkg.com/@gradio/gradio.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,14 +22,21 @@
         p {
             margin-top: 20px;
         }
+        iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 800px;
+            border: none;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
     <h1>Zapytaj D-LOGIC!</h1>
 
-    <!-- Osadzamy D-LOGIC za pomocą Web Component Gradio -->
-    <gradio-app src="https://hf.co/chat/assistant/662961816a8a9e052973f42d" height="600px"></gradio-app>
+    <!-- Osadzamy D-LOGIC za pomocą iframe -->
+    <iframe src="https://hf.co/chat/assistant/662961816a8a9e052973f42d"></iframe>
 
     <p>Powered by Gradio.</p>
 </body>
