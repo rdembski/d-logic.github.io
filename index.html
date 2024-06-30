@@ -37,8 +37,13 @@
                 body: JSON.stringify({ inputs: message })
             });
 
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                throw new Error(`Error: ${errorMessage}`);
+            }
+
             const data = await response.json();
-            return data.generated_text;
+            return data.generated_text || 'No response';
         }
 
         sendButton.addEventListener('click', async () => {
@@ -46,8 +51,12 @@
             chatBox.innerHTML += `<div>User: ${message}</div>`;
             userInput.value = '';
 
-            const reply = await sendMessage(message);
-            chatBox.innerHTML += `<div>Assistant: ${reply}</div>`;
+            try {
+                const reply = await sendMessage(message);
+                chatBox.innerHTML += `<div>Assistant: ${reply}</div>`;
+            } catch (error) {
+                chatBox.innerHTML += `<div>Assistant: Error occurred - ${error.message}</div>`;
+            }
         });
     </script>
 </body>
