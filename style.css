@@ -1,27 +1,43 @@
-* {
+/* Arkusz stylów dla strony z asystentem D-LOGIC */
+
+/* Ustawienia ogólne */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
 }
 
-.container {
+/* Stylizacja głównego kontenera */
+main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    min-height: 100vh; /* Minimalna wysokość ekranu */
+    background-color: #f4f4f4;
 }
 
-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* Media Queries dla responsywności */
+@media only screen and (max-width: 768px) {
+    iframe {
+        height: auto; /* Auto height for mobile devices */
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    iframe {
+        height: calc(100vh - 50px); /* Adjustment for tablets */
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    iframe {
+        height: calc(100vh - 100px); /* Adjustment for desktops */
+    }
 }
