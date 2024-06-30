@@ -1,43 +1,115 @@
-/* Arkusz stylów dla strony z asystentem D-LOGIC */
+/* Modernizacja arkusza stylów */
 
 /* Ustawienia ogólne */
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    line-height: 1.5;
 }
 
 header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    flex: 1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 161px); /* Wysokość minus header i footer */
+}
+
+section {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.hero button {
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.features .feature {
+    text-align: center;
+}
+
+.features i {
+    font-size: 36px;
+    color: #333;
+}
+
+hr {
+    opacity: 0.5;
+}
+
+footer {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 20px;
 }
 
-/* Stylizacja głównego kontenera */
-main {
+footer ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Minimalna wysokość ekranu */
-    background-color: #f4f4f4;
 }
 
-/* Media Queries dla responsywności */
-@media only screen and (max-width: 768px) {
-    iframe {
-        height: auto; /* Auto height for mobile devices */
-    }
+footer li {
+    margin: 0 10px;
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    iframe {
-        height: calc(100vh - 50px); /* Adjustment for tablets */
-    }
+footer a {
+    color: #fff;
 }
 
-@media only screen and (min-width: 1025px) {
-    iframe {
-        height: calc(100vh - 100px); /* Adjustment for desktops */
-    }
+footer i {
+    font-size: 24px;
 }
