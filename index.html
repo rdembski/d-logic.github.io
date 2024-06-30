@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moja Strona Główna z Gradio</title>
-    <!-- Dołącz CSS i JavaScript Gradio -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gradio/gradio/release/css/gradio.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@gradio/gradio/release/gradio.min.js"></script>
+    <!-- Dołącz biblioteki Gradio -->
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.33.0/gradio.js"></script>
 </head>
 <body>
     <!-- Osadź swoją aplikację Gradio -->
-    <gradio-app src="https://kingnish-opengpt-4o.hf.space"></gradio-app>
+    <gradio-interface id="gr-demo" src="https://kingnish-opengpt-4o.hf.space"></gradio-interface>
 </body>
 </html>
