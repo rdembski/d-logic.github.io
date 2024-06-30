@@ -16,29 +16,111 @@
             margin: 0;
             background-color: #f0f0f0;
         }
-        h1 {
-            color: #333;
-        }
-        p {
-            margin-top: 20px;
-        }
-        iframe {
-            width: 100%;
+        .chat-container {
+            width: 90%;
             max-width: 600px;
-            height: 800px;
-            border: none;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .chat-header {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ccc;
+        }
+        .chat-message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #f1f1f1;
+        }
+        .chat-message.user {
+            background-color: #e1f5fe;
+            text-align: right;
+        }
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-input button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .chat-input button:hover {
+            background-color: #0075a0;
         }
     </style>
 </head>
 
 <body>
-    <h1>Zapytaj D-LOGIC!</h1>
+    <div class="chat-container">
+        <div class="chat-header">
+            Czat z D-LOGIC
+        </div>
+        <div id="chat-messages" class="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Wpisz wiadomość...">
+            <button onclick="sendMessage()">Wyślij</button>
+        </div>
+    </div>
 
-    <!-- Osadzamy D-LOGIC za pomocą iframe -->
-    <iframe src="https://hf.co/chat/assistant/662961816a8a9e052973f42d"></iframe>
+    <script>
+        const chatMessages = document.getElementById("chat-messages");
 
-    <p>Powered by Gradio.</p>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            if (userInput.trim() === "") return;
+
+            appendMessage(userInput, "user");
+
+            const response = await fetch("https://hf.co/chat/assistant/662961816a8a9e052973f42d", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    inputs: userInput
+                })
+            });
+
+            const data = await response.json();
+            appendMessage(data.generated_text, "bot");
+
+            document.getElementById("user-input").value = "";
+        }
+
+        function appendMessage(message, sender) {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("chat-message");
+            if (sender === "user") messageDiv.classList.add("user");
+            messageDiv.innerText = message;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    </script>
 </body>
 
 </html>
