@@ -7,13 +7,31 @@
     <title>Chatbot D-LOGIC</title>
     <!-- Dołączamy skrypt Gradio -->
     <script src="https://unpkg.com/@gradio/gradio.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Zapytaj D-LOGIC!</h1>
 
-    <!-- Osadzamy D-LOGIC za pomocą Web Componenet Gradio -->
-    <gradio-interface src="https://hf.co/chat/assistant/662961816a8a9e052973f42d" height="600px"></gradio-interface>
+    <!-- Osadzamy D-LOGIC za pomocą Web Component Gradio -->
+    <gradio-app src="https://hf.co/chat/assistant/662961816a8a9e052973f42d" height="600px"></gradio-app>
 
     <p>Powered by Gradio.</p>
 </body>
