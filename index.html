@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mój Asystent D-LOGIC</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Gradio App</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        gradio-app {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Mój Asystent D-LOGIC</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Strona Główna</a></li>
-                    <li><a href="#">O Nas</a></li>
-                    <li><a href="#">Usługi</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <main>
-        <div class="container">
-            <div class="content">
-                <iframe src="https://hf.co/chat/assistant/662961816a8a9e052973f42d" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <aside class="social-media">
-                <h2>Udostępnij:</h2>
-                <ul>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                </ul>
-            </aside>
-        </div>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Mój Asystent D-LOGIC. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
+    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
+    <gradio-app src="https://rafaldembski-d-logic.hf.space"></gradio-app>
 </body>
 </html>
