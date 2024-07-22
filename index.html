@@ -25,6 +25,7 @@
             align-items: center;
             overflow: auto;
             box-sizing: border-box;
+            flex-direction: column; /* dodanie tej linii */
         }
         gradio-app {
             width: 100%;
@@ -33,12 +34,17 @@
             box-sizing: border-box;
             overflow: auto;
         }
+        .spacer {
+            height: 500px; /* dodanie dodatkowej przestrzeni */
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
         <gradio-app src="https://rafaldembski-d-logic.hf.space"></gradio-app>
+        <div class="spacer"></div> <!-- dodanie tej linii -->
     </div>
 </body>
 </html>
