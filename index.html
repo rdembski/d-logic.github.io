@@ -13,22 +13,30 @@
         }
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+        #container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         gradio-app {
             width: 100%;
             height: 100%;
-            overflow: auto; /* Dodane aby wewnętrzna treść była przewijalna */
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box; /* Upewnia się, że padding i border są wliczone w wysokość i szerokość */
+            overflow: auto;
+            box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
-    <gradio-app src="https://rafaldembski-d-logic.hf.space"></gradio-app>
+    <div id="container">
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
+        <gradio-app src="https://rafaldembski-d-logic.hf.space"></gradio-app>
+    </div>
 </body>
 </html>
