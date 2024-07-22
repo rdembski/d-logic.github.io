@@ -13,6 +13,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            overflow-y: auto; /* Zapewnia przewijanie strony */
         }
         header, footer {
             width: 100%;
@@ -26,13 +27,14 @@
             width: 100%;
             max-width: 1200px;
             padding: 1rem;
+            box-sizing: border-box;
         }
         section {
             margin-bottom: 2rem;
         }
         iframe {
             width: 100%;
-            height: 450px;
+            height: 80vh; /* Ustawienie wysokości iframe na 80% widoku */
             border: none;
         }
     </style>
