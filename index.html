@@ -9,7 +9,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Zmienione z auto na hidden */
+            overflow: hidden;
         }
         body {
             display: flex;
@@ -23,6 +23,7 @@
             overflow: auto; /* Dodane aby wewnętrzna treść była przewijalna */
             display: flex;
             flex-direction: column;
+            box-sizing: border-box; /* Upewnia się, że padding i border są wliczone w wysokość i szerokość */
         }
     </style>
 </head>
