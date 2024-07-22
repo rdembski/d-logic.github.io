@@ -9,17 +9,20 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            overflow: auto;
+            overflow: hidden; /* Zmienione z auto na hidden */
         }
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
         }
         gradio-app {
             width: 100%;
-            min-height: 100vh;
+            height: 100%;
+            overflow: auto; /* Dodane aby wewnętrzna treść była przewijalna */
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
