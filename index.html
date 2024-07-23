@@ -30,10 +30,24 @@
 <body>
     <div class="container">
         <iframe
+            id="dlogic-iframe"
             src="https://rafaldembski-d-logic.hf.space"
             frameborder="0"
-            onload="this.contentWindow.document.body.style.backgroundColor = 'black'; this.contentWindow.document.body.style.color = 'white';"
         ></iframe>
     </div>
+    <script>
+        document.getElementById('dlogic-iframe').onload = function() {
+            const iframeDocument = this.contentDocument || this.contentWindow.document;
+            const style = document.createElement('style');
+            style.textContent = `
+                body {
+                    background-color: black !important;
+                    color: white !important;
+                }
+                /* Dodaj dodatkowe style, aby dopasować wygląd */
+            `;
+            iframeDocument.head.appendChild(style);
+        };
+    </script>
 </body>
 </html>
