@@ -12,8 +12,8 @@
             width: 100%;
             overflow-x: hidden;
             overflow-y: auto;
-            background-color: black; /* Ustawienie tła na czarne */
-            color: white; /* Ustawienie koloru tekstu na biały */
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         .container {
             display: flex;
@@ -23,12 +23,23 @@
         }
         iframe {
             width: 100%;
-            height: 400vh; /* Zwiększenie wysokości iframe */
+            height: 400vh;
             border: none;
+        }
+        .theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
         }
     </style>
 </head>
 <body>
+    <div class="theme-switcher">
+        <label>
+            <input type="checkbox" id="theme-toggle">
+            Dark Mode
+        </label>
+    </div>
     <div class="container">
         <iframe
             src="https://rafaldembski-d-logic-beta.hf.space"
@@ -36,20 +47,23 @@
         ></iframe>
     </div>
     <script>
-        document.querySelector('iframe').onload = function() {
-            const iframeDoc = this.contentDocument || this.contentWindow.document;
-            const style = document.createElement('style');
-            style.textContent = `
-                body {
-                    background-color: black !important;
-                    color: white !important;
-                }
-                h1, h2, h3, h4, h5, h6, p, span, div {
-                    color: white !important;
-                }
-            `;
-            iframeDoc.head.appendChild(style);
-        };
+        const toggleSwitch = document.getElementById('theme-toggle');
+
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.style.setProperty('--background-color', 'black');
+                document.documentElement.style.setProperty('--text-color', 'white');
+            } else {
+                document.documentElement.style.setProperty('--background-color', 'white');
+                document.documentElement.style.setProperty('--text-color', 'black');
+            }
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Set initial theme
+        document.documentElement.style.setProperty('--background-color', 'white');
+        document.documentElement.style.setProperty('--text-color', 'black');
     </script>
 </body>
 </html>
