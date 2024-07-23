@@ -36,18 +36,30 @@
         ></iframe>
     </div>
     <script>
-        document.getElementById('dlogic-iframe').onload = function() {
-            const iframeDocument = this.contentDocument || this.contentWindow.document;
-            const style = document.createElement('style');
+        function applyStylesToIframe() {
+            const iframe = document.getElementById('dlogic-iframe');
+            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+            const style = iframeDocument.createElement('style');
             style.textContent = `
                 body {
                     background-color: black !important;
                     color: white !important;
                 }
-                /* Dodaj dodatkowe style, aby dopasować wygląd */
+                /* Dodatkowe style */
+                a {
+                    color: #1e90ff !important;
+                }
+                /* Dodaj inne style zgodnie z potrzebami */
             `;
             iframeDocument.head.appendChild(style);
+        }
+
+        document.getElementById('dlogic-iframe').onload = function() {
+            applyStylesToIframe();
         };
+
+        // W razie potrzeby powtarzaj co pewien czas, aby upewnić się, że style są zastosowane
+        setInterval(applyStylesToIframe, 1000);
     </script>
 </body>
 </html>
