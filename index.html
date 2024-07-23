@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Gradio App</title>
     <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e; /* Kolor tła */
+            color: #ffffff; /* Kolor tekstu */
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        gradio-app {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <gradio-app src="https://rafaldembski-d-logic-beta.hf.space"></gradio-app>
+    <div class="container">
+        <gradio-app src="https://rafaldembski-d-logic-beta.hf.space"></gradio-app>
+    </div>
 </body>
 </html>
 
