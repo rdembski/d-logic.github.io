@@ -8,28 +8,32 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 400vh; /* Setting height to ensure scrollability */
             width: 100%;
-            background-color: black; /* Ustawienie tła na czarne */
-            overflow: auto; /* Umożliwienie przewijania całej strony */
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: black; /* Setting the background to black */
+            color: white; /* Setting the text color to white */
         }
         .container {
-            width: 100%;
-            height: 400vh; /* Ustawienie wysokości kontenera na 400vh */
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
         iframe {
             width: 100%;
-            height: 100%;
+            height: 100%; /* Ensuring the iframe takes full height */
             border: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <iframe src="https://rafaldembski-d-logic-beta.hf.space"></iframe>
+        <iframe
+            src="https://rafaldembski-d-logic-beta.hf.space"
+            frameborder="0"
+        ></iframe>
     </div>
 </body>
 </html>
