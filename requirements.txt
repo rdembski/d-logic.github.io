@@ -21,4 +21,3 @@ uuid
 googletrans
 spaces
 numpy
-pandas
