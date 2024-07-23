@@ -28,15 +28,15 @@
         }
         /* Styl na wymuszenie białego tekstu wewnątrz iframe */
         @media (prefers-color-scheme: light) {
-            iframe {
-                background-color: white;
+            .container {
                 color: black;
+                background-color: white;
             }
         }
         @media (prefers-color-scheme: dark) {
-            iframe {
-                background-color: black;
+            .container {
                 color: white;
+                background-color: black;
             }
         }
     </style>
@@ -46,7 +46,7 @@
         <iframe
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
-            style="background-color: white; color: black;"
+            style="background-color: black; color: white;"
         ></iframe>
     </div>
 </body>
