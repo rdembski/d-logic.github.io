@@ -13,17 +13,17 @@
             overflow-x: hidden;
             overflow-y: auto;
             background-color: black; /* Ustawienie tła na czarne */
+            color: white; /* Ustawienie koloru tekstu na biały */
         }
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 400vh; /* Ustawienie wysokości kontenera */
         }
         iframe {
             width: 100%;
-            height: 100%; /* Ustawienie wysokości iframe na 100% wysokości kontenera */
+            height: 400vh; /* Zwiększenie wysokości iframe */
             border: none;
         }
     </style>
@@ -31,25 +31,24 @@
 <body>
     <div class="container">
         <iframe
-            id="myIframe"
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
         ></iframe>
     </div>
     <script>
-        document.getElementById('myIframe').onload = function() {
-            const iframeDocument = this.contentDocument || this.contentWindow.document;
+        document.querySelector('iframe').onload = function() {
+            const iframeDoc = this.contentDocument || this.contentWindow.document;
             const style = document.createElement('style');
             style.textContent = `
                 body {
                     background-color: black !important;
                     color: white !important;
                 }
-                h1, h2, h3, h4, h5, h6, p, div, span, a, li, ul, ol {
+                h1, h2, h3, h4, h5, h6, p, span, div {
                     color: white !important;
                 }
             `;
-            iframeDocument.head.appendChild(style);
+            iframeDoc.head.appendChild(style);
         };
     </script>
 </body>
