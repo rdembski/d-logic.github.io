@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedding Example</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: black; /* Ustawienie tła na czarne */
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        iframe {
+            width: 100%;
+            height: 400vh; /* Zwiększenie wysokości iframe */
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
