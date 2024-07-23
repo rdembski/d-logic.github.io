@@ -12,7 +12,7 @@
             width: 100%;
             overflow-x: hidden;
             overflow-y: auto;
-            background-color: black; /* Stałe tło strony na czarne */
+            background-color: black;
         }
         .container {
             display: flex;
@@ -32,7 +32,7 @@
         <iframe
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
-            style="background-color: black; color: white;"
+            onload="this.contentWindow.document.body.style.backgroundColor = 'black'; this.contentWindow.document.body.style.color = 'white';"
         ></iframe>
     </div>
 </body>
