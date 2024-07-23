@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,11 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 400vh; /* Wysokość strony */
+            height: 100%;
             width: 100%;
             overflow-x: hidden;
             overflow-y: auto;
             background-color: black; /* Ustawienie tła na czarne */
-            color: white; /* Ustawienie domyślnego koloru tekstu na biały */
         }
         .container {
             display: flex;
@@ -23,12 +22,8 @@
         }
         iframe {
             width: 100%;
-            height: 100%;
+            height: 100vh; /* Ustawienie wysokości iframe */
             border: none;
-        }
-        /* Wymuszenie białego koloru tekstu w osadzonej zawartości */
-        iframe {
-            color: white;
         }
     </style>
 </head>
@@ -37,6 +32,7 @@
         <iframe
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
+            style="height: 400vh;"
         ></iframe>
     </div>
 </body>
