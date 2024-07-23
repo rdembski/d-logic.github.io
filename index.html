@@ -39,19 +39,20 @@
         function applyStylesToIframe() {
             const iframe = document.getElementById('dlogic-iframe');
             const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            const style = iframeDocument.createElement('style');
-            style.textContent = `
-                body {
-                    background-color: black !important;
-                    color: white !important;
-                }
-                /* Dodatkowe style */
-                a {
-                    color: #1e90ff !important;
-                }
-                /* Dodaj inne style zgodnie z potrzebami */
-            `;
-            iframeDocument.head.appendChild(style);
+            if (iframeDocument.readyState === 'complete') {
+                const style = iframeDocument.createElement('style');
+                style.textContent = `
+                    body {
+                        background-color: black !important;
+                        color: white !important;
+                    }
+                    a {
+                        color: #1e90ff !important;
+                    }
+                    /* Dodaj inne style zgodnie z potrzebami */
+                `;
+                iframeDocument.head.appendChild(style);
+            }
         }
 
         document.getElementById('dlogic-iframe').onload = function() {
