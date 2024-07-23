@@ -10,26 +10,26 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            min-height: 400vh; /* Ustawienie minimalnej wysokości strony */
-            overflow-x: hidden;
-            overflow-y: auto;
             background-color: black; /* Ustawienie tła na czarne */
+            overflow: auto; /* Umożliwia przewijanie */
         }
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
+            height: 400vh; /* Ustawienie wysokości strony */
         }
         gradio-app {
             width: 100%;
             height: 400vh; /* Ustawienie wysokości aplikacji */
+            border: none;
         }
     </style>
-    <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
 </head>
 <body>
     <div class="container">
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
         <gradio-app src="https://rafaldembski-d-logic-beta.hf.space"></gradio-app>
     </div>
 </body>
