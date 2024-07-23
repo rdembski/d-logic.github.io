@@ -22,7 +22,7 @@
         }
         iframe {
             width: 100%;
-            height: 400vh;
+            height: 100vh; /* zmniejszona wysokość dla lepszej nawigacji */
             border: none;
         }
     </style>
@@ -38,22 +38,18 @@
     <script>
         function applyStylesToIframe() {
             const iframe = document.getElementById('dlogic-iframe');
-            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            if (iframeDocument.readyState === 'complete') {
-                const style = iframeDocument.createElement('style');
-                style.textContent = `
-                    body {
-                        background-color: black !important;
-                        color: white !important;
-                    }
-                    a {
-                        color: #1e90ff !important;
-                    }
-                    /* Dodaj inne style zgodnie z potrzebami */
-                `;
-                iframeDocument.head.appendChild(style);
+            const iframeWindow = iframe.contentWindow;
+
+            if (iframeWindow) {
+                iframeWindow.postMessage('apply-styles', '*');
             }
         }
+
+        window.addEventListener('message', function(event) {
+            if (event.data === 'styles-applied') {
+                console.log('Styles successfully applied in iframe.');
+            }
+        });
 
         document.getElementById('dlogic-iframe').onload = function() {
             applyStylesToIframe();
