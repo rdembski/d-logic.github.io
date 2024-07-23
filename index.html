@@ -11,15 +11,18 @@
             height: 100%;
             width: 100%;
             background-color: black; /* Ustawienie tła na czarne */
+            overflow: auto; /* Umożliwienie przewijania całej strony */
         }
         .container {
             width: 100%;
-            height: 100vh; /* Ustawienie wysokości kontenera */
-            overflow-y: scroll; /* Umożliwienie przewijania w pionie */
+            height: 400vh; /* Ustawienie wysokości kontenera na 400 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         gradio-app {
             width: 100%;
-            height: 400vh; /* Ustawienie dużej wysokości dla aplikacji */
+            height: 100%;
             border: none;
         }
     </style>
