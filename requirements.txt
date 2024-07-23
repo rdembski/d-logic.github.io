@@ -19,3 +19,6 @@ google-generativeai
 opencv-python
 uuid
 googletrans
+spaces
+numpy
+pandas
