@@ -31,7 +31,7 @@ jobs:
       - name: Run Gradio app and save static files
         run: |
           mkdir -p public
-          nohup python app.py & sleep 30
+          nohup python app.py & sleep 30 &
           wget -r -np -N -P ./public http://localhost:7860
 
       - name: Deploy to GitHub Pages
