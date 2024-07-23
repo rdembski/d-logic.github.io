@@ -32,6 +32,7 @@ jobs:
         run: |
           mkdir -p public
           nohup python app.py & sleep 30 &
+          sleep 60  # Dodaj dodatkowe oczekiwanie, aby upewnić się, że serwer Gradio jest uruchomiony
           wget -r -np -N -P ./public http://localhost:7860
 
       - name: Deploy to GitHub Pages
