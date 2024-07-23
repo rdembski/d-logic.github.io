@@ -30,9 +30,26 @@
 <body>
     <div class="container">
         <iframe
+            id="embeddedFrame"
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
         ></iframe>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const iframe = document.getElementById('embeddedFrame');
+            iframe.onload = function() {
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    body {
+                        color: white !important;
+                    }
+                `;
+                iframeDocument.head.appendChild(style);
+            };
+        });
+    </script>
 </body>
 </html>
