@@ -19,11 +19,25 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+            height: 400vh; /* Ustawienie wysokości kontenera */
         }
         iframe {
             width: 100%;
-            height: 100vh; /* Ustawienie wysokości iframe */
+            height: 100%; /* Ustawienie wysokości iframe na 100% wysokości kontenera */
             border: none;
+        }
+        /* Styl na wymuszenie białego tekstu wewnątrz iframe */
+        @media (prefers-color-scheme: light) {
+            iframe {
+                background-color: white;
+                color: black;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            iframe {
+                background-color: black;
+                color: white;
+            }
         }
     </style>
 </head>
@@ -32,7 +46,7 @@
         <iframe
             src="https://rafaldembski-d-logic-beta.hf.space"
             frameborder="0"
-            style="height: 400vh; background-color: white;"
+            style="background-color: white; color: black;"
         ></iframe>
     </div>
 </body>
