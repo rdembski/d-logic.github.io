@@ -15,12 +15,12 @@
         }
         .container {
             width: 100%;
-            height: 400vh; /* Ustawienie wysokości kontenera na 400 */
+            height: 400vh; /* Ustawienie wysokości kontenera na 400vh */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        gradio-app {
+        iframe {
             width: 100%;
             height: 100%;
             border: none;
@@ -29,8 +29,7 @@
 </head>
 <body>
     <div class="container">
-        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.37.2/gradio.js"></script>
-        <gradio-app src="https://rafaldembski-d-logic-beta.hf.space"></gradio-app>
+        <iframe src="https://rafaldembski-d-logic-beta.hf.space"></iframe>
     </div>
 </body>
 </html>
