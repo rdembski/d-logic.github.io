@@ -7,7 +7,7 @@ from remove_background import remove_background_demo
 from magic_eraser import magic_eraser_demo
 from img_prompts import img_prompts_demo
 
-# Zawartość strony
+# Original content
 content = {
     "en": """
 ![logo](https://huggingface.co/spaces/rafaldembski/D-LOGIC_beta/resolve/main/logodlogic.png)
@@ -33,7 +33,11 @@ D-LOGIC is a versatile tool built to provide a wide range of functionalities, le
 ## 📚 Learn More
 - 📘 **Tutorials**: Find detailed guides and tutorials to help you get the most out of D-LOGIC. [Read more...](#about#tutorials)
 - ❓ **FAQ**: Frequently Asked Questions to address common queries and issues. [Read more...](#about#faq)
-- 👤 **About Me**: Learn more about the creator of D-LOGIC, Rafał Dembski, his journey, and his passion for projects.
+- 👤 **About Me**: Learn more about the creator of D-LOGIC, Rafał Dembski, his journey, and his passion for programming and AI. [Read more...](#about#about-me)
+- 📞 **Contact**: Get in touch with the team behind D-LOGIC for any queries or support. [Read more...](#about#contact)
+- 📜 **Documentation**: Detailed documentation about the functionalities and usage of D-LOGIC. [Read more...](#about#documentation)
+
+<span style="color: red; font-weight: bold;">As this project is still evolving, feedback and suggestions are highly appreciated. Join us on this journey of innovation and discovery.</span>
     """,
     "pl": """
 ![logo](https://huggingface.co/spaces/rafaldembski/D-LOGIC_beta/resolve/main/logodlogic.png)
@@ -62,6 +66,8 @@ D-LOGIC to wszechstronne narzędzie zbudowane, aby zapewnić szeroki wachlarz fu
 - 👤 **O mnie**: Dowiedz się więcej o twórcy D-LOGIC, Rafale Dembskim, jego drodze i pasji do programowania i AI. [Czytaj więcej...](#about#about-me)
 - 📞 **Kontakt**: Skontaktuj się z zespołem stojącym za D-LOGIC w przypadku jakichkolwiek pytań lub wsparcia. [Czytaj więcej...](#about#contact)
 - 📜 **Dokumentacja**: Szczegółowa dokumentacja dotycząca funkcjonalności i użycia D-LOGIC. [Czytaj więcej...](#about#documentation)
+
+<span style="color: red; font-weight: bold;">Ponieważ ten projekt wciąż się rozwija, opinie i sugestie są bardzo mile widziane. Dołącz do nas w tej podróży innowacji i odkryć.</span>
     """,
     "de": """
 ![logo](https://huggingface.co/spaces/rafaldembski/D-LOGIC_beta/resolve/main/logodlogic.png)
@@ -90,6 +96,8 @@ D-LOGIC ist ein vielseitiges Werkzeug, das entwickelt wurde, um eine breite Pale
 - 👤 **Über mich**: Erfahren Sie mehr über den Schöpfer von D-LOGIC, Rafał Dembski, seinen Werdegang und seine Leidenschaft für Programmierung und KI. [Mehr lesen...](#about#about-me)
 - 📞 **Kontakt**: Kontaktieren Sie das Team hinter D-LOGIC bei Fragen oder Unterstützung. [Mehr lesen...](#about#contact)
 - 📜 **Dokumentation**: Detaillierte Dokumentation über die Funktionen und die Nutzung von D-LOGIC. [Mehr lesen...](#about#documentation)
+
+<span style="color: red; font-weight: bold;">Da sich dieses Projekt noch in der Entwicklung befindet, werden Feedback und Vorschläge sehr geschätzt. Begleiten Sie uns auf dieser Reise der Innovation und Entdeckung.</span>
     """
 }
 
