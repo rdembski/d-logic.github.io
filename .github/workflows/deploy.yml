@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Gradio App to GitHub Pages
 
 on:
   push:
@@ -28,12 +28,14 @@ jobs:
           chmod +x setup.sh
           ./setup.sh
 
-      - name: Run Gradio app
+      - name: Run Gradio app and save static files
         run: |
-          nohup python app.py &
+          mkdir -p public
+          nohup python app.py & sleep 30
+          wget -r -np -N -P ./public http://localhost:7860
 
-      - name: Setup GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./public
