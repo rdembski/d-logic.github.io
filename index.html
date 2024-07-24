@@ -21,14 +21,20 @@
             width: 80%;
             height: 500px;
             border: 2px solid #ccc;
-            background-color: white;
+            background-color: black;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hugging Face Spaces</h1>
-        <iframe src="https://rafaldembski-d-logic.hf.space" frameborder="0"></iframe>
+        <iframe id="hf-space" src="https://rafaldembski-d-logic.hf.space" frameborder="0"></iframe>
     </div>
+    <script>
+        document.getElementById('hf-space').onload = function() {
+            const iframeDocument = this.contentDocument || this.contentWindow.document;
+            iframeDocument.body.style.backgroundColor = 'black';
+        };
+    </script>
 </body>
 </html>
