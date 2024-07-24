@@ -12,24 +12,28 @@ body {
 
 .container {
     display: flex;
+    height: 100vh;
 }
 
 .sidebar {
     background-color: #2f3136;
     width: 240px;
-    height: 100vh;
+    height: 100%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar .logo {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
+    text-align: center;
 }
 
 .nav-links {
     list-style: none;
-    padding: 0;
+    flex-grow: 1;
 }
 
 .nav-links li {
@@ -49,16 +53,19 @@ body {
 .main-content {
     flex-grow: 1;
     padding: 20px;
+    overflow-y: auto;
 }
 
 header {
     background-color: #202225;
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 header h1 {
     color: #fff;
+    margin: 0;
 }
 
 .feature-container {
@@ -73,6 +80,29 @@ header h1 {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     width: 30%;
     color: #dcddde;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #202225;
+    color: #dcddde;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #7289da;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #5b6eae;
 }
 
 @media (max-width: 768px) {
