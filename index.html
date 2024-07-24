@@ -18,22 +18,22 @@
             padding: 20px;
         }
         iframe {
-            width: 80%;
-            height: 500px;
+            width: 850px;
+            height: 450px;
             border: 2px solid #ccc;
-            background-color: black;
+            background-color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Hugging Face Spaces</h1>
-        <iframe id="hf-space" src="https://rafaldembski-d-logic.hf.space" frameborder="0"></iframe>
+        <iframe id="hf-space" src="https://rafaldembski-d-logic-test.hf.space" frameborder="0"></iframe>
     </div>
     <script>
         document.getElementById('hf-space').onload = function() {
             const iframeDocument = this.contentDocument || this.contentWindow.document;
-            iframeDocument.body.style.backgroundColor = 'black';
+            iframeDocument.body.style.backgroundColor = 'white';
         };
     </script>
 </body>
