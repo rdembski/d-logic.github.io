@@ -1,66 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ D-LOGIC ✨</title>
+    <title>Hugging Face Spaces</title>
     <style>
-        body, html {
+        body {
+            background-color: white;
             margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow-x: hidden;
-            overflow-y: auto;
-            background-color: black;
+            font-family: Arial, sans-serif;
         }
         .container {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            width: 100%;
+            gap: 20px;
+            padding: 20px;
         }
         iframe {
-            width: 100%;
-            height: 400vh;
-            border: none;
+            width: 80%;
+            height: 500px;
+            border: 2px solid #ccc;
+            background-color: white;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <iframe
-            id="dlogic-iframe"
-            src="https://rafaldembski-d-logic.hf.space"
-            frameborder="0"
-        ></iframe>
+        <h1>Hugging Face Spaces</h1>
+        <iframe src="https://mukaist-dalle-4k.hf.space" frameborder="0"></iframe>
+        <iframe src="https://rafaldembski-removebackground.hf.space" frameborder="0"></iframe>
     </div>
-    <script>
-        function applyStylesToIframe() {
-            const iframe = document.getElementById('dlogic-iframe');
-            const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            if (iframeDocument.readyState === 'complete') {
-                const style = iframeDocument.createElement('style');
-                style.textContent = `
-                    body {
-                        background-color: black !important;
-                        color: white !important;
-                    }
-                    a {
-                        color: #1e90ff !important;
-                    }
-                    /* Dodaj inne style zgodnie z potrzebami */
-                `;
-                iframeDocument.head.appendChild(style);
-            }
-        }
-
-        document.getElementById('dlogic-iframe').onload = function() {
-            applyStylesToIframe();
-        };
-
-        // W razie potrzeby powtarzaj co pewien czas, aby upewnić się, że style są zastosowane
-        setInterval(applyStylesToIframe, 1000);
-    </script>
 </body>
 </html>
